@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "api-backend",
   "version": "1.0.0",
   "description": "# Proyecto",
@@ -6,18 +7,42 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+=======
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.0",
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "type": "module",
+  "name": "api-backend",
+  "description": "# Proyecto",
+  "version": "1.0.0",
+  "main": "server.js",
+>>>>>>> 0ac3e7be533665c84b932d26e9d643a5662d4189
   "repository": {
     "type": "git",
     "url": "git+https://github.com/los-tucanes-de-la-web/api-backend.git"
   },
+<<<<<<< HEAD
   "keywords": [],
+=======
+>>>>>>> 0ac3e7be533665c84b932d26e9d643a5662d4189
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/los-tucanes-de-la-web/api-backend/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/los-tucanes-de-la-web/api-backend#readme",
   "dependencies": {
     "mongoose": "^6.7.0"
   }
+=======
+  "homepage": "https://github.com/los-tucanes-de-la-web/api-backend#readme"
+>>>>>>> 0ac3e7be533665c84b932d26e9d643a5662d4189
 }
