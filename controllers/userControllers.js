@@ -58,7 +58,7 @@ const login = async (req, res) => {
     }
 
     const payload = {
-      userid: user.id,
+      userId: user.id,
     };
     // este es el Token @.
     const token = jwt.encode(payload, config.jwtSecret);
