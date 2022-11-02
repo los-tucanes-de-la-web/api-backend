@@ -17,7 +17,6 @@ const movieSchema = new mongoose.Schema({
     genre: [{
         type: String,
         required: true
-
     }],
     cast: [{
         type: String,
@@ -40,7 +39,7 @@ const movieSchema = new mongoose.Schema({
         required: true
     },
     poster: {
-        type: Buffer,
+        type: String,
         required: true
     }
 })
