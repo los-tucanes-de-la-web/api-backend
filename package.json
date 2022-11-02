@@ -1,0 +1,20 @@
+{
+  "name": "api-backend",
+  "version": "1.0.0",
+  "description": "Hacer un API de un sistema de un cine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/los-tucanes-de-la-web/api-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/los-tucanes-de-la-web/api-backend/issues"
+  },
+  "homepage": "https://github.com/los-tucanes-de-la-web/api-backend#readme"
+}
