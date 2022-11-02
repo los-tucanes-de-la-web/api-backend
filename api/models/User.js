@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['user','admin','employee'],
+    enum: ['user', 'admin', 'employee'],
     required: true,
   },
   phoneNumber: {
@@ -39,7 +39,11 @@ const userSchema = new mongoose.Schema({
   userName: {
     type: String,
     required: true,
-  }
+  },
+  isVerified: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 export default mongoose.model('User', userSchema);
