@@ -1,9 +1,5 @@
 {
   "dependencies": {
-<<<<<<< HEAD
-"express": "^4.18.2"
-}
-=======
 "dotenv": "^16.0.3",
 "express": "^4.18.2",
 "bcrypt": "^5.1.0",
@@ -29,5 +25,4 @@
     "url": "https://github.com/los-tucanes-de-la-web/api-backend/issues"
   },
   "homepage": "https://github.com/los-tucanes-de-la-web/api-backend#readme"
->>>>>>> 0ac3e7be533665c84b932d26e9d643a5662d4189
 }

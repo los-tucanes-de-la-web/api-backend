@@ -1,5 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
+import authRoutes from '../api/routes/authRoutes.js'
 
 const api = express();
 
@@ -13,4 +14,5 @@ api.get('/status', (_, res) => {
   });
 });
 //TODO:
+api.use(authRoutes)
 export default api;
