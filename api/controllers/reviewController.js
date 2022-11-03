@@ -1,4 +1,5 @@
-import Review from "../models/Review.js"
+import Review from "../models/Review.js";
+
 
 const create = async (req, res) => {
     try {
@@ -12,6 +13,36 @@ const create = async (req, res) => {
       })
     }
 }
+
+const edit = async (req, res) => {
+  const { id } = req.params;
+  const { id:userId} = req.user;
+  try {
+    const searchComment = await Review.findById(id).populate("user");
+    if (!searchComment) {
+      return res.status(404).json({
+        msg: "Review not founded",
+      });
+    }
+    const { user } = searchUser;
+    if (user.id !== userId) {
+      return res.status(403).json({
+        msg: "You don't have permissions",
+      });
+    }
+    const review = await Review.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+    return res.json({ msg: "Review Edited", review });
+
+  } catch (error) {
+    return res.status(500).json({
+      msg: "Error al editar comentario",
+      error,
+    });
+  }
+};
+
 
 const remove = async (req, res) => {
     const { id } = req.params
@@ -31,4 +62,5 @@ const remove = async (req, res) => {
     }
 }
 
-export { create, remove }
+export { create, edit ,remove }
+

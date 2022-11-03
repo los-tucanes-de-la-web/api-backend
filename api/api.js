@@ -8,9 +8,10 @@ import movieRoutes from './routes/movieRoutes.js'
 import projectionRoutes from './routes/projectionRoutes.js'
 import cinemaRoutes from './routes/cinemaRoutes.js'
 import reviewRoutes from './routes/reviewRoutes.js'
+import projectionRoutes from './routes/projectionRoutes.js';
 
+const api = express();
 
-const api = express()
 
 api.use(morgan('combined'))
 
@@ -22,6 +23,7 @@ api.get('/status', (_, res) => {
   })
 })
 
+
 api.use('/verify', authRoutes)
 api.use('/movies', movieRoutes)
 api.use('/cinemas',cinemaRoutes)
@@ -30,3 +32,4 @@ api.use('/reviews', reviewRoutes)
 api.use('/users', userRouter)
 
 export default api
+
