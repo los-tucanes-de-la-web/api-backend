@@ -18,6 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/los-tucanes-de-la-web/api-backend.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
