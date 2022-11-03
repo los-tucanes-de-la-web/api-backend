@@ -15,9 +15,7 @@ const create = async (req, res) => {
 
 const edit = async (req, res) => {
   const { id } = req.params;
-  const { authorization: token } = req.headers;
-  const payload = jwt.decode(token, config.jwtSecret);
-  const { userId } = payload;
+  const { id:userId} = req.user;
   try {
     const searchComment = await Review.findById(id).populate("user");
     if (!searchComment) {
