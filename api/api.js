@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import authRoutes from './routes/authRoutes.js'
 
 import movieRoutes from './routes/movieRoutes.js';
-
+import reviewRoutes from './routes/reviewRoutes.js'
 
 const api = express();
 
@@ -22,6 +22,7 @@ api.use("/verify",authRoutes)
 //TODO:
 
 api.use('/movies', movieRoutes);
+api.use('/reviews', reviewRoutes);
 
 
 export default api;
