@@ -5,6 +5,7 @@ import userRouter from './routes/userRouter.js'
 import authRoutes from './routes/authRoutes.js';
 import movieRoutes from './routes/movieRoutes.js';
 import projectionRoutes from './routes/projectionRoutes.js';
+import cinemaRoutes from './routes/cinemaRoutes.js'
 
 const api = express();
 
@@ -19,7 +20,7 @@ api.get('/status', (_, res) => {
 });
 
 api.use('/verify', authRoutes);
-
+api.use('/cinema', cinemaRoutes);
 api.use('/movies', movieRoutes);
 api.use('/users', userRouter );
 api.use('/projections', projectionRoutes);
