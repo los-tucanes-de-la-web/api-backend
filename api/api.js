@@ -13,6 +13,10 @@ api.get('/status', (_, res) => {
     msg: 'API En linea funcionado',
   });
 });
+
+api.use('/movies',movieRoutes)
+
+
 //TODO:
 api.use('/movies', movieRoutes)
 

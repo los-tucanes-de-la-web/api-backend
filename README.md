@@ -36,7 +36,7 @@
   - Productor
   - Fecha de lanzamiento
   - Género
-  - Dureción
+  - Duración
   - Cast
   - Sinopsis
   - Calificación

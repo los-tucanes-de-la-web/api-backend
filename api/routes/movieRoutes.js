@@ -1,10 +1,14 @@
-import express from 'express'
-import * as movieController from '../controllers/movieController.js'
+import express from 'express';
+import * as movieController from '../controllers/movieController.js';
 
-const router = express.Router()
+const router = express.Router();
 
 router
-    .route('/:id')
-    .put(movieController.update)
+  .route('/')
+  .post(movieController.create);
 
-export default router
+router
+  .route('/:id')
+  .put(movieController.update)
+
+export default router;
