@@ -1,8 +1,14 @@
 {
+  "name": "api-backend",
+  "version": "1.0.0",
+  "description": "# Proyecto",
+  "main": "server.js",
+
   "description": "# Proyecto",
   "version": "1.0.0",
   "main": "server.js",
   "name": "api-backend",
+
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
@@ -25,5 +31,11 @@
     "jwt-simple": "^0.5.6",
     "mongoose": "^6.7.0",
     "morgan": "^1.10.0"
+
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+
+
   }
 }
