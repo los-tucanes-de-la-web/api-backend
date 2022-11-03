@@ -18,13 +18,10 @@ api.get('/status', (_, res) => {
   });
 });
 
-<<<<<<< HEAD
 api.use('/cinemas',cinemaRoutes)
-=======
 api.use("/verify",authRoutes)
 //TODO:
 
->>>>>>> 64580be44c05a8a33acb602dd52e259440516c7a
 api.use('/movies', movieRoutes);
 
 
