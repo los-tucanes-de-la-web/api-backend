@@ -1,8 +1,10 @@
-import express from 'express'
-import * as reviewController from '../controllers/reviewController.js'
+import express from 'express';
 
-const router = express.Router()
+import { authValidator } from '../middlewares/authValidator.js';
+import * as reviewController from '../controllers/reviewController.js';
 
-router.route('/').post(authValidator, reviewController.create)
+const router = express.Router();
 
-export default router
+router.route('/').post(authValidator, reviewController.create);
+
+export default router;
