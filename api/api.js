@@ -1,5 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
+import movieRoutes from './routes/movieRoutes'
 
 const api = express();
 
@@ -12,5 +13,9 @@ api.get('/status', (_, res) => {
     msg: 'API En linea funcionado',
   });
 });
+
+api.use('/movie',movieRoutes)
+
+
 //TODO:
 export default api;
