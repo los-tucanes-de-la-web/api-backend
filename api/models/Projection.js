@@ -7,29 +7,23 @@ const projectionSchema = new mongoose.Schema({
   },
   language: {
     type: String,
-    required: true,
-    
+    required: true,    
   },
   subtitles: {
     type: String,
     required: true,
   },
-
-  room:{
-    type:String,
-    required:true,
-
+  cinema:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Cinema',
   },
-
   movie:{
-    type: String,
-    required: true,
-
+    type: mongoose.Schema.Types.ObjectId,
+    ref:'Movie',
   },
   price:{
     type: Number,
     required: true,
-
   }
 });
 
