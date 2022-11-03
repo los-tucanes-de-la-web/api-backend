@@ -4,7 +4,7 @@ import * as movieController from '../controllers/movieController.js'
 const router = express.Router()
 
 router
-    .route('/movies/:id')
+    .route('/:id')
     .put(movieController.update)
 
 export default router
