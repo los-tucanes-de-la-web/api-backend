@@ -1,11 +1,9 @@
 import express from 'express';
 import morgan from 'morgan';
-<<<<<<< Updated upstream
+
+import authRoutes from './routes/authRoutes.js';
 import movieRoutes from './routes/movieRoutes.js';
-=======
-import movieRoutes from './routes/movieRoutes.js'
-import projectionRoutes from './routes/projectionRoutes.js'
->>>>>>> Stashed changes
+import projectionRoutes from './routes/projectionRoutes.js';
 
 const api = express();
 
@@ -19,11 +17,9 @@ api.get('/status', (_, res) => {
   });
 });
 
-<<<<<<< Updated upstream
+api.use('/verify', authRoutes);
+
 api.use('/movies', movieRoutes);
-=======
-api.use('/movies',movieRoutes)
-api.use('/projections',projectionRoutes)
->>>>>>> Stashed changes
+api.use('/projections', projectionRoutes);
 
 export default api;
