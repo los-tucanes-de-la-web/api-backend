@@ -2,7 +2,8 @@ import Review from '../models/Review.js'
 
 const create = async (req, res) => {
   try {
-    const review = await Movie.review(req.body)
+    req.body.user = req.user.id
+    const review = await Review.review(req.body)
     return res.json({ msg: 'Review Created', review })
   } catch (error) {
     return res.status(500).json({
