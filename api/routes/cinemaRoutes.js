@@ -1,11 +1,11 @@
 import express from 'express';
-import * as cinemaController from '../controllers/cinemaController.js';
+import * as cinemaController from '../controllers/cinemaController.js'
 
 const router = express.Router();
 
 router
-  .route('/')
-  .delete(cinemaController.remove);
+  .route('/:id').delete(cinemaController.remove)
 
+  .route('/').post(cinemaController.create);
 
 export default router;
