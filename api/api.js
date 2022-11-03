@@ -15,8 +15,6 @@ api.get('/status', (_, res) => {
   });
 });
 
-api.use('/movies',movieRoutes)
+api.use('/movies', movieRoutes);
 
-
-//TODO:
 export default api;
