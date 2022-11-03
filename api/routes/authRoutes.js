@@ -1,4 +1,3 @@
-
 import express from "express";
 import { login } from "../controllers/userControllers";
 import {verifyUser} from "../controllers/userController.js"
