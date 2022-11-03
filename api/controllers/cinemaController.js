@@ -1,4 +1,4 @@
-import { Cinema } from '../models/Cinema.js'
+import Cinema from '../models/Cinema.js';
 
 const create = async (req, res) => {
   try {
@@ -15,4 +15,4 @@ const create = async (req, res) => {
   }
 };
 
-export { create};
+export { create };
