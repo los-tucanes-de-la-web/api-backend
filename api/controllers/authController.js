@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt'
 import User from '../models/User.js'
-import nodemailer from 'nodemailer'
-import { transporter } from '../config/mailer.js'
+
+// import { transporter } from '../config/mailer.js'
 
 
 const register= async(req, res)=>{
@@ -11,31 +11,22 @@ const register= async(req, res)=>{
         body.password=hashedPassword
 
         const user= await User.create(body)
-        user.password= undefined
-        const mailOptions={
-            from:'deliasofia2310@gmail.com',
-            to:user.email,
-            subject:'Nodemailer TEST',
-            text:'Verify your credentials'
-        }
-        const sendEmail=await transporter.sendMail(mailOptions,()=>{
-            if (error){
-                return res.status(500).json({
-                    msg:'Error at verifying email',
-                    error
-                })
-            }else {
-                return res.status(200).json({
-                    msg:'Verifying email sent'
-                })
-            }
-        })
-        return res.json({
-            msg:'user registered',
-            user
-        })
-    
 
+        user.password= undefined
+
+        // const mailOptions={
+        //     from:'deliasofia2310@gmail.com',
+        //     to:user.email,
+        //     subject:'Nodemailer TEST',
+        //     text:'Verify your credentials'
+        // }
+        // const sendEmail=await transporter.sendMail(mailOptions)
+        // return res.json({
+        //     msg:'user registered',
+        //     user,
+        //     sendEmail
+        // })
+      
     } catch (error) {
         return res.status(500).json({
             msg:'User registration error',
