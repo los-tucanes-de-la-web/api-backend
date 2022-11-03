@@ -2,11 +2,13 @@ import express from 'express'
 import morgan from 'morgan'
 import userRouter from './routes/userRouter.js'
 import authRoutes from './routes/authRoutes.js'
+
 import cinemaRoutes from './routes/cinemaRoutes.js'
 import movieRoutes from './routes/movieRoutes.js'
 import projectionRoutes from './routes/projectionRoutes.js'
 import cinemaRoutes from './routes/cinemaRoutes.js'
 import reviewRoutes from './routes/reviewRoutes.js'
+
 
 const api = express()
 
@@ -20,11 +22,11 @@ api.get('/status', (_, res) => {
   })
 })
 
+api.use('/verify', authRoutes)
+api.use('/movies', movieRoutes)
 api.use('/cinemas',cinemaRoutes)
-api.use("/verify",authRoutes)
 api.use('/projections', projectionRoutes)
 api.use('/reviews', reviewRoutes)
-api.use('/movies', movieRoutes)
 api.use('/users', userRouter)
 
 export default api
