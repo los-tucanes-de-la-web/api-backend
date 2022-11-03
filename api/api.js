@@ -18,7 +18,7 @@ api.get('/status', (_, res) => {
   });
 });
 
-api.use(authRoutes)
+api.use("/verify",authRoutes)
 //TODO:
 
 api.use('/movies', movieRoutes);
