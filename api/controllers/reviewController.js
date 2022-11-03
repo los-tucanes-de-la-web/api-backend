@@ -16,7 +16,7 @@ const create = async (req, res) => {
 const remove = async (req, res) => {
     const { id } = req.params
     try {
-        const reviewId = await Review.findByIdAndUpdate(id, {enabled: false})
+        const reviewId = await Review.findByIdAndUpdate(id, {enabled: false}, {new:true})
         return res.json({
             msg: "Review disabled successfully",
             reviewId
