@@ -1,4 +1,4 @@
-import User from "../models/user.js"
+import User from "../models/User.js"
 
 //leer todos los usuarios
 const read = async (req, res) => {
@@ -35,4 +35,4 @@ const readById = async(req,res)=>{
     }
 }
 
-export {red, redById}
+export {read, readById}
