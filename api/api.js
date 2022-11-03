@@ -1,6 +1,8 @@
 import express from 'express';
 import morgan from 'morgan';
-import UserRouter from '../router/userRouter.js'
+import userRouter from './routes/userRouter.js'
+import movieRoutes from './routes/movieRoutes.js';
+
 const api = express();
 
 api.use(morgan('combined'));
@@ -12,8 +14,8 @@ api.get('/status', (_, res) => {
     msg: 'API En linea funcionado',
   });
 });
-//TODO:
 
-api.use(UserRouter);
+api.use('/movies', movieRoutes);
+api.use('/router', userRouter );
 
 export default api;
