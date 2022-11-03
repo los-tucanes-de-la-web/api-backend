@@ -7,5 +7,8 @@ router
   .route('/')
   .post(movieController.create);
 
+router
+  .route('/:id')
+  .put(movieController.update)
 
 export default router;
