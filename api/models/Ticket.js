@@ -2,17 +2,15 @@ import mongoose from 'mongoose';
 
 const ticketSchema =  new mongoose.Schema({
 
-    projection: [{
+    projection: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Projection',
 
-    } 
-    ],
-    user: [{
+    },
+    user: {
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User'
-    }
-    ],
+    },
     number_of_tickets: Number,
     subtotal: Number,
     discount: Number,
