@@ -1,6 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
-import movieRoutes from './routes/movieRoutes'
+import movieRoutes from './routes/movieRoutes.js'
 
 const api = express();
 
@@ -14,7 +14,7 @@ api.get('/status', (_, res) => {
   });
 });
 
-api.use('/movie',movieRoutes)
+api.use('/movies',movieRoutes)
 
 
 //TODO:
