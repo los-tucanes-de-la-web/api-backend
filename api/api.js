@@ -1,6 +1,11 @@
 import express from 'express';
 import morgan from 'morgan';
+<<<<<<< Updated upstream
 import movieRoutes from './routes/movieRoutes.js';
+=======
+import movieRoutes from './routes/movieRoutes.js'
+import projectionRoutes from './routes/projectionRoutes.js'
+>>>>>>> Stashed changes
 
 const api = express();
 
@@ -14,6 +19,11 @@ api.get('/status', (_, res) => {
   });
 });
 
+<<<<<<< Updated upstream
 api.use('/movies', movieRoutes);
+=======
+api.use('/movies',movieRoutes)
+api.use('/projections',projectionRoutes)
+>>>>>>> Stashed changes
 
 export default api;
