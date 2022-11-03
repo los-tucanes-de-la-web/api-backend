@@ -4,13 +4,10 @@ const ticketSchema =  new mongoose.Schema({
 
     projection: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Projection',
-
-    },
+        ref: 'Projection'},
     user: {
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'User'
-    },
+        ref: 'User'},
     number_of_tickets: Number,
     subtotal: Number,
     discount: Number,
