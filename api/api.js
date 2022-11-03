@@ -1,6 +1,10 @@
 import express from 'express';
 import morgan from 'morgan';
+
+import authRoutes from './routes/authRoutes.js'
+
 import movieRoutes from './routes/movieRoutes.js';
+
 
 const api = express();
 
@@ -14,6 +18,10 @@ api.get('/status', (_, res) => {
   });
 });
 
+api.use("/verify",authRoutes)
+//TODO:
+
 api.use('/movies', movieRoutes);
+
 
 export default api;
