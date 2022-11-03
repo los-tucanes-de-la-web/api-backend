@@ -30,6 +30,4 @@ const update = async (req, res) => {
     }
 }
 
-
-
-  export { create, update};
+export { create, update};
