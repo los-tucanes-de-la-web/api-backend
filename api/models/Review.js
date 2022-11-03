@@ -1,18 +1,17 @@
-import mongoose from 'mongoose'
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 const reviewSchema = new mongoose.Schema({
   comment: String,
   rating: Number,
   movie: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Movie'
+    ref: 'Movie',
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
   },
-  enabled: Boolean
-})
+  enabled: Boolean,
+});
 
-export default mongoose.model('Review', reviewSchema)
+export default mongoose.model('Review', reviewSchema);
