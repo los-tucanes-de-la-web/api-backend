@@ -3,10 +3,10 @@ const verifyUser = async (req, res) => {
   const { token } = req.params;
   try {
     const payload = jwt.decode(token, config.jwtSecret);
-    const { userId, isVerified } = payload;
+    const { userId } = payload;
     const verified = await User.findByIdAndUpdate(
       userId,
-      { isVerified: isVerified },
+      { isVerified: true },
       {
         new: true,
       }
