@@ -14,7 +14,7 @@ api.use(express.json());
 
 api.get('/status', (_, res) => {
   res.json({
-    msg: 'API En linea funcionado',
+    msg: 'API En linea funcionando',
   });
 });
 

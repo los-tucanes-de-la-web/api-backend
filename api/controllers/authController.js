@@ -1,7 +1,8 @@
-import bcrypt from 'bcrypt';
+// import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs'
 import User from '../models/User.js';
 
-// import { transporter } from '../config/mailer.js'
+import { transporter } from '../config/mailer.js'
 
 const register = async (req, res) => {
   const { body } = req;
