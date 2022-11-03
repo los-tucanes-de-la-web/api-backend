@@ -16,6 +16,6 @@ api.get('/status', (_, res) => {
 });
 
 api.use('/movies', movieRoutes);
-api.use('/router', userRouter );
+api.use('/users', userRouter );
 
 export default api;
