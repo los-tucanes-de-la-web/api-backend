@@ -1,4 +1,6 @@
-import User from "../models/User.js";
+import User from '../models/User.js';
+import config from '../config/index.js';
+
 const verifyUser = async (req, res) => {
   const { token } = req.params;
   try {
@@ -11,10 +13,10 @@ const verifyUser = async (req, res) => {
         new: true,
       }
     );
-    return res.json({ msg: "Usuario verificado correctamente" ,verified});
+    return res.json({ msg: 'Usuario verificado correctamente', verified });
   } catch (error) {
     return res.status(500).json({
-      msg: "Error al actualizar usuario",
+      msg: 'Error al actualizar usuario',
       error,
     });
   }
