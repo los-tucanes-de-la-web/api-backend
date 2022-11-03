@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -7,6 +7,7 @@ export default {
     port: process.env.PORT || 3000,
   },
   database: {
-    uri: process.env.DB_URI || 'mongodb://localhost/cinemadatabase',
+    uri: process.env.DB_URI || "mongodb://localhost/cinemadatabase",
   },
+  jwtSecret: process.env.JWT_SECRET,
 };

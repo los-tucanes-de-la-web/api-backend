@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import User from "../models/User.js";
 import jwt from "jwt-simple";
-import { config } from "../config/index.js";
+import config from "../config/index.js";
 
 const login = async (req, res) => {
   /**
@@ -39,14 +39,15 @@ const login = async (req, res) => {
       return res.status(403).json({
         msg: "Credenciales inválidas",
       });
-
-      // Validamos si el usuario tiene el correo verificado
-      if (!isVerified) {
-        return res.status(407).json({
-          msg: "Correo no verificado",
-        });
-      }
     }
+
+    // Validamos si el usuario tiene el correo verificado
+    if (!user.isVerified) {
+      return res.status(407).json({
+        msg: "Correo no verificado",
+      });
+    }
+
     // compara el password enviado con el de la base de datos
     const isValid = await bcrypt.compare(body.password, user.password);
 
