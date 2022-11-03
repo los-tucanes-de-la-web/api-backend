@@ -1,6 +1,6 @@
 import User from "../models/User";
 const verifyUser = async (req, res) => {
-  const { authorization: token } = req.headers;
+  const { token } = req.params;
   try {
     const payload = jwt.decode(token, config.jwtSecret);
     const { userId, isVerified } = payload;
