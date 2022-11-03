@@ -3,7 +3,8 @@ import Cinema from '../models/Cinema.js';
 const remove = async (req, res) => {
     const { id } = req.params;
   try {
-    const cinema = await Cinema.findByIdAndUpdate(id, { isDeleted: true }
+    const cinema = await Cinema.findByIdAndUpdate(id, { isDeleted: true },
+        {new:true},
     );
     return res.json({
       msg: 'Cinema eliminado',

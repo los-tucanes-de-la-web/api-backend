@@ -27,8 +27,4 @@ api.use('/reviews', reviewRoutes)
 api.use('/movies', movieRoutes)
 api.use('/users', userRouter)
 
-
-
-
-
 export default api
