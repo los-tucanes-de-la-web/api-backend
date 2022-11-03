@@ -13,6 +13,9 @@ const ticketSchema = new mongoose.Schema({
   subtotal: Number,
   discount: Number,
   total: Number,
-});
-
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
+  });
 export default mongoose.model('Ticket', ticketSchema);
