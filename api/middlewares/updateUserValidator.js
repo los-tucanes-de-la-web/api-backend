@@ -1,11 +1,14 @@
 import joi from "joi";
 
+const now = Date.now();
+const adultAge = new Date(now - (1000 * 60 * 60 * 24 * 365 * 18));
+
 const updateUserValidator = async (req, res, next) => {
   const userSchema = joi.object({
     dni: joi.string().empty(""),
     name: joi.string().empty().min(4).max(30).trim(),
     lastName: joi.string().empty().empty().min(4).max(30).trim(),
-    birthDate: joi.date().less(subtractYears()).greater("1-1-1934"),
+    birthDate: joi.date().less(adultAge).greater("1-1-1934"),
     phoneNumber: joi.string().min(8).max(10),
     email: joi.string().email().empty().trim(),
     password: joi.string().empty().min(4).max(30).trim(),
@@ -25,13 +28,5 @@ const updateUserValidator = async (req, res, next) => {
     });
   }
 };
-function subtractYears() {
-  date = new Date();
-  date.setFullYear(date.getFullYear() - 18);
-  let day = date.getDate();
-  let month = date.getMonth();
-  let year = date.getFullYear();
-  format = day + "-" + month + "-" + year;
-  return date;
-}
+
 export { updateUserValidator };
