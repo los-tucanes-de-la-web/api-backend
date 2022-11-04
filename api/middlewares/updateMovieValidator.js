@@ -2,16 +2,16 @@ import joi from 'joi'
 
 const updateMovieValidator = async (req, res, next) => {
     const movieSchema = joi.object({
-        title: joi.string(),
-        director: joi.array().min(1),
-        producer: joi.array().min(1),
-        genre: joi.array().min(1),
-        cast: joi.array().min(1),
-        releaseDate: joi.date(),
-        duration: joi.number().greater(60),
-        synopsis: joi.string(),
-        score: joi.number(),
-        poster: joi.string()
+        title: joi.string().required(),
+        director: joi.array().items(joi.string()).min(1).required(),
+        producer: joi.array().items(joi.string()).min(1).required(),
+        genre: joi.array().items(joi.string()).min(1).required(),
+        cast: joi.array().items(joi.string()).min(1).required(),
+        releaseDate: joi.date().required(),
+        duration: joi.number().greater(60).required(),
+        synopsis: joi.string().required(),
+        score: joi.number().required(),
+        poster: joi.string().required()
     })
 
     try {
