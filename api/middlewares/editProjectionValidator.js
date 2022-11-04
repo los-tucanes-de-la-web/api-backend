@@ -7,7 +7,7 @@ const editProjectionValidator = async (req, res, next) => {
     subtitles: Joi.string().required(),
     cinema: Joi.objectId().required(),
     movie: Joi.objectId().required(),
-    price: Joi.number().required(),
+    price: Joi.number().greater(0).required(),
   });
   try {
     await projectionSchema.validateAsync(req.body);
