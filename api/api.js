@@ -21,7 +21,7 @@ api.get('/status', (_, res) => {
   });
 });
 
-api.use('/verify', authRoutes);
+api.use('/auth', authRoutes);
 api.use('/movies', movieRoutes);
 api.use('/cinemas', cinemaRoutes);
 api.use('/projections', projectionRoutes);
