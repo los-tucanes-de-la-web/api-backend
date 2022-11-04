@@ -9,6 +9,7 @@ import projectionRoutes from './routes/projectionRoutes.js'
 import cinemaRoutes from './routes/cinemaRoutes.js'
 import reviewRoutes from './routes/reviewRoutes.js'
 import projectionRoutes from './routes/projectionRoutes.js';
+import ticketRoutes from './routes/ticketRoutes.js';
 
 const api = express();
 
@@ -30,6 +31,7 @@ api.use('/cinemas',cinemaRoutes)
 api.use('/projections', projectionRoutes)
 api.use('/reviews', reviewRoutes)
 api.use('/users', userRouter)
+api.use('/tickets', ticketRoutes)
 
 export default api
 
