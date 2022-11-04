@@ -36,4 +36,23 @@ const create = async (req, res) => {
   }
 };
 
-export { create };
+const update = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const cinema = await Cinema.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+    return res.json({
+      msg: 'Cine modificado :D ',
+      cinema,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      msg: 'Error al actualizar Cine D:',
+      error,
+    });
+  }
+};
+
+
+export { create, update };
