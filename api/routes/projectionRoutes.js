@@ -5,6 +5,6 @@ import { editProjectionValidator } from '../middlewares/editProjectionValidator.
 const router = express.Router();
 
 router.route('/').post(projectionController.create);
-router.route('/:id').put(editProjectionValidator, projectionController.update);
+router.route('/:id').put(editProjectionValidator, projectionController.update).delete(projectionController.remove);
 
 export default router;
