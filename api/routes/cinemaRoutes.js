@@ -1,5 +1,5 @@
 import express from 'express';
-import * as cinemaController from '../controllers/cinemaController.js'
+import * as cinemaController from '../controllers/cinemaController.js';
 
 const router = express.Router();
 
@@ -13,3 +13,4 @@ router
   
 
 export default router;
+
