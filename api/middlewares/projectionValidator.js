@@ -1,21 +1,27 @@
-// import joi from 'joi'
+import joi from 'joi';
+import ObjectId from 'joi-objectid';
+
+const JoiObjectId = ObjectId(joi);
 const projectionValidator = async(req, res, next) => {
 
-    const Joi = require('joi-oid')
-
-const projectionSchema = Joi.object({
-    date: Joi.date(),
-    language: Joi.string(),
-    subtitles: Joi.string().max(7),
-    cinema: Joi.objectId(),
-    movie: Joi.objectId(),
-    price:Joi.number(),
+const projectionSchema = joi.object({
+    date: joi.date(),
+    language: joi.string(),
+    subtitles: joi.string().max(7),
+    cinema: JoiObjectId().required(),
+    movie: JoiObjectId().required(),
+    price:joi.number(),
 })
  
 try {
-    await projectionSchema.validateAsync()
+    await projectionSchema.validateAsync(req.body);
+    next();
+
 } catch (error) {
-    
+    return res.status(400).json({
+        msg: 'Bad request',
+        error,
+    });
 }
    
 }

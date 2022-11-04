@@ -24,7 +24,10 @@ const projectionSchema = new mongoose.Schema({
   price:{
     type: Number,
     required: true,
-  }
+  },
+  isDeleted: { 
+    type: Boolean, 
+    defaults: false }
 });
 
 export default mongoose.model('Projection', projectionSchema);
