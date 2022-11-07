@@ -33,4 +33,22 @@ const update = async (req, res) => {
   }
 };
 
-export { create, update };
+const remove = async (req, res) => {
+  const { id } = req.params;
+try {
+  const projection = await Projection.findByIdAndUpdate(id, 
+    {isDeleted: true},
+    {new: true});    
+  return res.json({
+    msg: 'Projection deleted',
+    projection,
+  });
+} catch (error) {
+  return res.status(500).json({
+    msg: 'Error deleting the projection',
+    error,
+  });
+}
+};
+
+export { create, update, remove };

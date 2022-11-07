@@ -18,10 +18,11 @@ api.use(express.json());
 api.get('/status', (_, res) => {
   res.json({
     msg: 'API En linea funcionado',
+    envs: process.env,
   });
 });
 
-api.use('/verify', authRoutes);
+api.use('/auth', authRoutes);
 api.use('/movies', movieRoutes);
 api.use('/cinemas', cinemaRoutes);
 api.use('/projections', projectionRoutes);
