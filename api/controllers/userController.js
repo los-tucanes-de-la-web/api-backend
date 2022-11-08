@@ -1,4 +1,4 @@
-import User from "../models/User.js"
+import User from '../models/User.js';
 import config from '../config/index.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jwt-simple';
@@ -72,7 +72,7 @@ const read = async (req, res) => {
 //leer el usuario especifico
 
 const readById = async (req, res) => {
-  const id = req.params;
+  const { id } = req.params;
   try {
     const user = await User.findById(id);
     return res.json({

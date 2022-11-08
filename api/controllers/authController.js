@@ -29,7 +29,7 @@ const register = async (req, res) => {
       text: 'Verify your credentials on link below',
       html: `<h1>Email Confirmation</h1>
       <h2>Hello ${user.name}</h2>
-      <a href=http://localhost:3000/auth/verify/${token}> Click here</a>
+      <a href=${config.server.url}/auth/verify/${token}> Click here</a>
       `,
     };
     const sendEmail = await transporter.sendMail(mailOptions);

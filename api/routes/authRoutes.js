@@ -2,7 +2,7 @@ import { register } from '../controllers/authController.js';
 import express from 'express';
 import { verifyUser } from '../controllers/userController.js';
 import * as userController from '../controllers/userController.js';
-import * as userRegisterValidator from '../middlewares/userRegisterValidator.js';
+import {userRegisterValidator} from '../middlewares/userRegisterValidator.js';
 
 const router = express.Router();
 //register
